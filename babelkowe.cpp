@@ -49,7 +49,7 @@ Tablica::Tablica()
 
 Tablica::~Tablica()
 {
-    delete tablica;
+    delete[] tablica;
 }
 
 
