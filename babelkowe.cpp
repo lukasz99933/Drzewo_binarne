@@ -25,6 +25,8 @@ public:
     void wyswietlanie(); //Metoda do wyświetlania tablicy.
 
     Tablica(); //konstruktor, który generuje losowe wartości do tablicy
+
+    ~Tablica();
    
 
 };
@@ -43,6 +45,11 @@ Tablica::Tablica()
 
     }
 
+}
+
+Tablica::~Tablica()
+{
+    delete tablica;
 }
 
 
