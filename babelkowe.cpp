@@ -1,13 +1,15 @@
 // Sortowanie bąbelkowe.
 #include <cstdlib>
 #include <iostream>
+#include<memory>
 
 using namespace std;
 
 class Tablica
 {
-  int n = 20; // rozmiar
-  int* tablica = new int[n];
+  int n; // rozmiar
+  unique_ptr<int[]> tablica;
+  //int* tablica = new int[n];
 
 public:
   void sortowanie(int i); // Metoda do sortowania tablicy
@@ -18,6 +20,8 @@ public:
 
 Tablica::Tablica()
 {
+	n=20;
+	tablica=make_unique<int[]>(n);
   for (int i = 0; i < n; i++) {
     tablica[i] = (rand() % 100);
   }
@@ -25,7 +29,6 @@ Tablica::Tablica()
 
 Tablica::~Tablica()
 {
-  delete[] tablica;
 }
 
 void
